@@ -94,17 +94,59 @@
             font-weight: bold;
             position: absolute;
 
-            top: 17%;
-            left: 15%;
+            top: 6%;
+            left: 38%;
 
         }
 
         #btn:hover {
             /* transform: scale(0.9); */
-
             /* box-sizing: border-box; */
             border: 3px solid rgb(88, 183, 214);
 
+        }
+
+        /* this is for tablets size */
+        @media screen and (max-width:838px) {
+            #container {
+                width: 83vw;
+                height: 46vw;
+            }
+
+            #move {
+                left: 35%;
+            }
+
+            #btn {
+                width: 5rem;
+                height: 2rem;
+                font-size: 11px;
+                padding: 0px;
+
+                left: 42%;
+            }
+        }
+
+        /* this is for Mobiles size  */
+
+        @media screen and (max-width:390px) {
+            #container {
+                width: 97vw !important;
+                height: 105vw !important;
+            }
+
+            #move {
+                width: 57vw;
+                height: 57vw;
+                top: 29%;
+                left: 23% !important;
+            }
+
+            #btn {
+                top: 10%;
+                left: 34% !important;
+                width: 35% !important;
+            }
         }
     </style>
     <title>Document</title>
@@ -118,8 +160,11 @@
         <input type="button" name="" value="STOP/START" id="btn">
     </div>
     <script>
+        // here we get button and circle id 
         var move = document.getElementById("move");
         var id = document.getElementById("btn");
+
+        // Here we use of arrow function 
         id.addEventListener("click", () => {
             move.style.animationPlayState = move.style.animationPlayState == 'running' ? 'paused' : 'running';
 
