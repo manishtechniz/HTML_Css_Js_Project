@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        * {
+            box-sizing: border-box;
+            padding: 0px;
+            margin: 0px;
+        }
+
+        #container {
+            width: 40vw;
+            height: 40vW;
+            background-color: aqua;
+            position: relative;
+            margin: auto;
+            border-radius: 30px;
+
+        }
+
+        #move {
+
+            width: 22vw;
+            height: 22vw;
+            border: 8px solid green;
+            border-left: 8px solid rgb(12, 80, 12) !important;
+            border-radius: 50%;
+            position: absolute;
+            top: 20%;
+            left: 23%;
+            animation: startAnimation 1s infinite;
+            animation-play-state: running;
+
+        }
+
+        @keyframes startAnimation {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            10% {
+                transform: rotate(36deg);
+            }
+
+            20% {
+                transform: rotate(72deg);
+            }
+
+            30% {
+                transform: rotate(108deg);
+            }
+
+            40% {
+                transform: rotate(144deg);
+            }
+
+            50% {
+                transform: rotate(180deg);
+            }
+
+            60% {
+                transform: rotate(216deg);
+            }
+
+            70% {
+                transform: rotate(252deg);
+            }
+
+            80% {
+                transform: rotate(288deg);
+            }
+
+            90% {
+                transform: rotate(324deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        #btn {
+
+            /* display: none; */
+            border: 3px solid rgb(23, 129, 23);
+            background-color: rgb(23, 129, 23);
+            border-radius: 3px;
+            padding: 7px;
+            color: white;
+            font-weight: bold;
+            position: absolute;
+
+            top: 6%;
+            left: 38%;
+
+        }
+
+        #btn:hover {
+            /* transform: scale(0.9); */
+            /* box-sizing: border-box; */
+            border: 3px solid rgb(88, 183, 214);
+
+        }
+
+        /* this is for tablets size */
+        @media screen and (max-width:838px) {
+            #container {
+                width: 83vw;
+                height: 46vw;
+            }
+
+            #move {
+                left: 35%;
+            }
+
+            #btn {
+                width: 5rem;
+                height: 2rem;
+                font-size: 11px;
+                padding: 0px;
+
+                left: 42%;
+            }
+        }
+
+        /* this is for Mobiles size  */
+
+        @media screen and (max-width:390px) {
+            #container {
+                width: 97vw !important;
+                height: 105vw !important;
+            }
+
+            #move {
+                width: 57vw;
+                height: 57vw;
+                top: 29%;
+                left: 23% !important;
+            }
+
+            #btn {
+                top: 10%;
+                left: 34% !important;
+                width: 35% !important;
+            }
+        }
+    </style>
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="container">
+        <div id="move">
+
+        </div>
+        <input type="button" name="" value="STOP/START" id="btn">
+    </div>
+    <script>
+        // here we get button and circle id 
+        var move = document.getElementById("move");
+        var id = document.getElementById("btn");
+
+        // Here we use of arrow function 
+        id.addEventListener("click", () => {
+            move.style.animationPlayState = move.style.animationPlayState == 'running' ? 'paused' : 'running';
+
+        })
+    </script>
+</body>
+
+</html>
